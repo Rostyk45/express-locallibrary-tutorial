@@ -1,8 +1,384 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+Here's the CSS with comments deleted:
+
+```css
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
 }
 
-a {
-  color: #00B7FF;
+body {
+  background-color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  flex-direction: row;
+}
+
+#bookContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.book-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.book-authors {
+  font-style: italic;
+  color: #333;
+}
+
+#bookCreationModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#bookCreationModal .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+#bookCreationModal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#bookCreationModal .close:hover,
+#bookCreationModal .close:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalContent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+#closeButton {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding-bottom: 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.sidebar li {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #333;
+}
+
+.sidebar li a:hover {
+  background-color: #aaa;
+}
+
+.sidebar li:hover {
+  scale: 1.05;
+}
+
+.sidebar li:last-child {
+  margin-right: 0;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.book-instance {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+    transition: all 0.2s ease;
+}
+
+.book-instance:hover {
+    transform: translateY(-3px);
+}
+
+.author-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  transition: color 0.1s ease;
+}
+
+.author-link:hover {
+  color:#333;
+  font-weight: bold;
+}
+
+.genre-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  transition: color 0.1s ease;
+}
+
+.genre-link:hover {
+  color:#333;
+  font-weight: bold;
+}
+
+.bookinstance-link {
+  text-decoration: none;
+  color: black;
+  transition: color 0.1s ease;
+}
+
+.bookinstance-link:hover {
+  color: rgb(51, 110, 51);
+  font-weight: bold;
+}
+
+.delete-button {
+  width: 75px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #a3302a;
+}
+
+.update-button {
+  width: 75px;
+  background-color: #97d0f2;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.update-button:hover {
+  background-color: #6c97af;
+}
+
+.book-title-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  transition: 0.1s ease;
+}
+
+.book-title-link:hover {
+  font-weight: bold;
+}
+
+.border-with-background {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.border-with-background:hover {
+  transform: translateY(-3px);
+}
+
+.checkbox-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.checkbox-custom {
+  cursor: pointer;
+}
+
+.checkbox-custom input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkbox-custom label:before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.checkbox-custom input[type="checkbox"]:checked + label:before {
+  background-color: #007bff;
+}
+
+.checkbox-custom label span {
+  font-weight: bold;
+}
+
+.checkbox-custom label:after {
+  content: '\2713';
+  display: none;
+  font-size: 12px;
+  color: #fff;
+}
+
+.checkbox-custom input[type="checkbox"]:checked + label:after {
+  display: inline-block;
+}
+
+#bookinstanceDetail, #genreDetail, #authorDetail, #bookDetail {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: white;
+  color: black;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.not-implemented-container {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  text-align: center;
+}
+
+.not-implemented-content {
+  border: 2px solid #333;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.not-implemented-title {
+  color: #333;
+  margin: 0;
 }
